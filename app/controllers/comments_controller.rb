@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     if @comment.save  #データが保存された時
       redirect_to prototype_path(@comment.prototype)  #詳細ページにリダイレクト
     else  #データが保存された時
-      @prototype = @comment.ptototype  
+      @prototype = @comment.prototype  
       @comments = @prototype.comments
       render "prototypes/show"  #views/prototypes/show.html.erbのファイルを参照
     end
