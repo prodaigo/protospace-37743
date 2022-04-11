@@ -1,0 +1,12 @@
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>  <%# ログインしている時の処理 %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link %>  <%# 現在ログインしているユーザー名をリンクとして表示し、ユーザー詳細ページへ %>
+      </div> 
+    <% end %>
+    <div class="card__wrapper">
+      <%= render partial: "prototype", collection: @prototypes %>  <%# インスタンス変数に複数要素が入っている時は、collection使用 %>
+    </div>
+</main>
